@@ -1,2 +1,2 @@
-# HSE_Phyton
-Coursera Phyton Course
+# HSE_Python
+Coursera Python Course
