@@ -16,8 +16,12 @@ s1 = r1 - l1
 s2 = r2 - l2
 s3 = r3 - l3
 
-l0 = min(l1, l2, l3)
-print(l0)
+if l1 <= l2 <= l3:
+    if l2 <= r1 and
+
+
+
+
 
 if l2 <= r1 and l3 <= r2:
     print(0)
