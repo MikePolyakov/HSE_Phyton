@@ -17,5 +17,4 @@ while n != 0:
     elif n != 0 and n != element:
         maxElement = 1
         element = n
-        print('max =', maxElement, 'elem =', element)
 print(finalAnswer)

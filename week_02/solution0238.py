@@ -6,13 +6,13 @@
 одно вхождение наибольшего элемента.
 '''
 n = int(input())
-maxN = n
-answer = n
+max1 = n
+max2 = 0
 while n != 0:
     n = int(input())
-    if n != 0 and n >= maxN:
-        answer = maxN
-        maxN = n
-    elif n != 0 and n < maxN:
-        answer = n
-print(answer)
+    if n != 0 and n >= max1:
+        max2 = max1
+        max1 = n
+    elif n != 0 and n > max2 and n != max1:
+        max2 = n
+print(max2)
