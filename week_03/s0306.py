@@ -9,3 +9,10 @@
 p = int(input())
 x = int(input())
 y = int(input())
+deposit = x + y / 100
+perc = 1 + p / 100
+deposit = deposit * perc
+rub = int(deposit)
+x = deposit - int(deposit)
+kop = int(float('{0:.10}'.format(x)) * 100)
+print(rub, kop)
