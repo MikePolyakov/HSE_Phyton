@@ -42,20 +42,81 @@
 Для хранения ответа используйте список, где индекс будет номером селения,
 а по этому индексу будет запоминаться номер бомбоубежища.
 '''
-n = int(input())
-n_dist = list(map(int, input().split()))
-m = int(input())
-m_dist = list(map(int, input().split()))
+'''
+n = 10
+n_dist = [79, 64, 13, 8, 38, 29, 58, 20, 56, 17]
 n_list = []
 for i in range(n):
-    n_list.append((i+1, n_dist[i]))
-print(n_list)
-n_list.sort(key = n_list[])
+    n_list.append((n_dist[i], i + 1))
+n_sort_list = sorted(n_list)
 
+m = 10
+m_dist = [53, 19, 20, 85, 82, 39, 58, 46, 51, 69]
 m_list = []
 for i in range(m):
-    m_list.append((i+1, m_dist[i]))
+    m_list.append((m_dist[i], i + 1))
+m_sort_list = sorted(m_list)
+'''
+'''
+n = int(input())
+n_dist = list(map(int, input().split()))
+n_list = []
+for i in range(n):
+    n_list.append((n_dist[i], i + 1))
+n_sort_list = sorted(n_list)
 
+m = int(input())
+m_dist = list(map(int, input().split()))
+m_list = []
+for i in range(m):
+    m_list.append((m_dist[i], i + 1))
+m_sort_list = sorted(m_list)
+'''
 
+n = 4
+n_dist = [1, 2, 6, 10]
+n_list = []
+for i in range(n):
+    n_list.append((n_dist[i], i + 1))
+n_sort_list = sorted(n_list)
+print(n_sort_list)
 
+m = 2
+m_dist = [7, 3]
+m_list = []
+for i in range(m):
+    m_list.append((m_dist[i], i + 1))
+m_sort_list = sorted(m_list)
+print(m_sort_list)
 
+saved_index = 0
+i = 0
+n_m_list = []
+for i in range(n):
+    print('i=', i)
+    print('saved index=', saved_index)
+    for j in range(saved_index, m-1):
+        print('j0= ', j)
+        distance_i_j = abs(n_sort_list[i][0] - m_sort_list[j][0])
+        print(distance_i_j)
+        distance_i_j1 = abs(n_sort_list[i][0] - m_sort_list[j+1][0])
+        print(distance_i_j1)
+        if distance_i_j <= distance_i_j1:
+            saved_index = j
+            break
+        else:
+            print('j= ', j)
+            if j + 2 == m:
+                j += 1
+                saved_index += 1
+                break
+            else:
+                saved_index += 1
+    new_point = (n_sort_list[i][1], m_sort_list[j][1])
+    n_m_list.append(new_point)
+    print(n_m_list)
+n_m_list_sort = sorted(n_m_list)
+final_list = []
+for i in range(n):
+    final_list.append(n_m_list_sort[i][1])
+print(*final_list)
